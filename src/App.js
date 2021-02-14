@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import github from './apis/github';
-import SearchField from './SearchField';
-import UserRepos from './UserRepos';
+import SearchField from './components/SearchField';
+import UserRepos from './components/UserRepos';
 import './App.css';
-import Header from './Header';
-import NightSwitch from './NightSwitch';
+import Header from './components/Header';
+import DarkMode from './components/DarkMode';
 
 class App extends Component {
   constructor() {
@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       searchValue: '',
       userDetails: null,
-      nightMode: false
+      darkMode: false
     }
   }
 
@@ -39,18 +39,18 @@ class App extends Component {
   }
 
   switchMode = () => {
-    this.setState({ nightMode: !this.state.nightMode });
-    document.getElementById('body').style.backgroundColor = !this.state.nightMode ? '#343a40' : 'unset';
-    document.getElementById('body').style.color = !this.state.nightMode ? 'white' : 'unset';
+    this.setState({ darkMode: !this.state.darkMode });
+    document.getElementById('body').style.backgroundColor = !this.state.darkMode ? '#343a40' : 'unset';
+    document.getElementById('body').style.color = !this.state.darkMode ? 'white' : 'unset';
   }
 
   render() {
     return <div className="container">
-      <div className="float-right mt-2 mb-2 vertical-center"><span className="mr-2">Dark Mode</span><NightSwitch toggle={this.switchMode} /></div>
+      <div className="float-right mt-2 mb-2 vertical-center"><span className="mr-2">Dark Mode</span><DarkMode toggle={this.switchMode} /></div>
       <div className="wrapper text-center">
         <div className="pt-3 pb-3"><Header name={'GitHub Repository Search'} /></div>
-        <div className="mt-2"><SearchField value={this.state.searchValue} setValue={this.setSearchValue} nightMode={this.state.nightMode} /></div>
-        <div className="mt-2"><UserRepos userDetails={this.state.userDetails} viewAll={this.viewAllRepos} nightMode={this.state.nightMode} /></div>
+        <div className="mt-2"><SearchField value={this.state.searchValue} setValue={this.setSearchValue} darkMode={this.state.darkMode} /></div>
+        <div className="mt-2"><UserRepos userDetails={this.state.userDetails} viewAll={this.viewAllRepos} darkMode={this.state.darkMode} /></div>
       </div></div>
   }
 }

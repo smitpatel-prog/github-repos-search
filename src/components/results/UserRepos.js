@@ -19,7 +19,7 @@ class UserRepos extends Component {
                     <button onClick={() => this.props.viewAll(details.repositories.totalCount)} className="btn btn-sm btn-link">View All</button> : null}
             </div>
             <div className="table-responsive">
-                <table className={this.props.nightMode ? "table table-sm table-dark table-bordered" : "table table-sm table-bordered"}>
+                <table className={this.props.darkMode ? "table table-sm table-dark table-bordered" : "table table-sm table-bordered"}>
                     <thead>
                         <tr>
                             <th width="30%">Repository Name</th>

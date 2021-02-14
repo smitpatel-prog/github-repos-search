@@ -27,7 +27,7 @@ const SearchField = ({ value, setValue, nightMode }) => {
             />
             {value.length ?
                 <div style={classes.clearContainer}>
-                    <span onClick={() => setValue({ target: { value: '' } })} className={nightMode ? 'text-dark' : ''}>
+                    <span onClick={() => setValue({ target: { value: '' } })} className={darkMode ? 'text-dark' : ''}>
                         &#10005;
                 </span>
                 </div> : null}

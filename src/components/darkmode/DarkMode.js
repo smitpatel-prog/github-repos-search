@@ -1,10 +1,10 @@
 import React from 'react';
-import './NightSwitch.css';
+import './DarkMode.css';
 
-const NightSwitch = ({ toggle }) => {
+const DarkMode = ({ toggle }) => {
     return <label className="switch mb-0">
         <input type="checkbox" onChange={() => toggle()} />
         <span className="slider round"></span></label>
 }
 
-export default NightSwitch;
+export default DarkMode;

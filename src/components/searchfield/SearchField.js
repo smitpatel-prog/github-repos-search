@@ -18,7 +18,7 @@ const classes = {
     }
 }
 
-const SearchField = ({ value, setValue, nightMode }) => {
+const SearchField = ({ value, setValue, darkMode }) => {
     return <div>
         <div style={classes.searchContainer}>
             <input

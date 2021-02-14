@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import github from './apis/github';
-import SearchField from './components/SearchField';
-import UserRepos from './components/UserRepos';
+import SearchField from './components/searchfield/SearchField';
+import UserRepos from './components/results/UserRepos';
 import './App.css';
-import Header from './components/Header';
-import DarkMode from './components/DarkMode';
+import Header from './components/header/Header';
+import DarkMode from './components/darkmode/DarkMode';
 
 class App extends Component {
   constructor() {
@@ -46,7 +46,9 @@ class App extends Component {
 
   render() {
     return <div className="container">
-      <div className="float-right mt-2 mb-2 vertical-center"><span className="mr-2">Dark Mode</span><DarkMode toggle={this.switchMode} /></div>
+      <div className="float-right mt-2 mb-2 vertical-center">
+      <span className="mr-2">Dark Mode</span>
+        <DarkMode toggle={this.switchMode} /></div>
       <div className="wrapper text-center">
         <div className="pt-3 pb-3"><Header name={'GitHub Repository Search'} /></div>
         <div className="mt-2"><SearchField value={this.state.searchValue} setValue={this.setSearchValue} darkMode={this.state.darkMode} /></div>

@@ -1,0 +1,23 @@
+.container {
+    padding: 0 1rem;
+}
+
+.container .wrapper {
+    margin: 0 auto;
+    max-width: 650px;
+}
+
+.vertical-center {
+    display: inline-flex;
+    align-items: center;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.complete {
+    height: 100vh;
+    width: 100%;
+}

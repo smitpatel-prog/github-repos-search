@@ -1,8 +1,10 @@
-# Getting Started with Create React App
+GitHub Repositories Search
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+GitHub Repository Search is a web app to display all repositories created by user in GitHub. This app offers a search field where user can type the name of user and API call is made to GitHub  API to retrieve a list of repositories.
 
 ## Available Scripts
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 

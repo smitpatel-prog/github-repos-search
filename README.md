@@ -1,4 +1,4 @@
-GitHub Repositories Search
+## GitHub Repositories Search
 
 GitHub Repository Search is a web app to display all repositories created by user in GitHub. This app offers a search field where user can type the name of user and API call is made to GitHub  API to retrieve a list of repositories.
 

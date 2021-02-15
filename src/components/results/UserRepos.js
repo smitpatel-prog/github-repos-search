@@ -11,8 +11,7 @@ class UserRepos extends Component {
     }
 
     showList = (details) => {
-        console.log(details);
-        return <div>
+        return <div className="repo-results">
             <div className="text-right">{this.userName(details)}</div>
             <div className="text-right"><span className="mr-2">Showing {details.repositories.nodes.length} of {details.repositories.totalCount} </span>
                 {details.repositories.totalCount > 10 && details.repositories.nodes.length !== details.repositories.totalCount ?
@@ -41,7 +40,7 @@ class UserRepos extends Component {
     }
 
     blank = () => {
-        return <div>No User Found</div>
+        return <div className="rep-desc">No User Found</div>
     }
     render() {
         return <div>{

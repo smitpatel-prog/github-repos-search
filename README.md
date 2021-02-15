@@ -1,12 +1,62 @@
-## GitHub Repositories Search
+# GitHub Repository Search
 
-GitHub Repository Search is a web app to display all repositories created by user in GitHub. This app offers a search field where user can type the name of user and API call is made to GitHub  API to retrieve a list of repositories.
+GitHub Repository Search is an application that fetches the repository of a user by their username. The UI of this application is build on React and ulitizes GitHub graphQL API to retrive the desired list.
+
+## User Interface
+
+The application has a search bar where user can type the username for whom repo list must be shown. If the user is found, their name and profile photo is displayed along with their repository, otherwise, no users found is displayed.
+
+## Screenshots
+
+### `Light Mode`
+![Alt text](/src/assets/light.PNG?raw=true "Light")
+
+
+### `Night Mode`
+![Alt text](/src/assets/dark.PNG?raw=true "Dark")
+
+## GraphQL
+The GitHub GraphQL API offers flexibility and the ability to define precisely the data you want to fetch.
+
+API Endpoint: 
+```https://api.github.com/graphql```
+
+### Authentication
+
+A persnal access token needs to be passed to the server in order to authenticate the user and obtain successful response. The step-by-step guide to create the token and pass it in the headers of each API call is provided at ```https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token```
+
+### `Testing GraphQL Query`
+
+Because GraphQL operations consist of multiline JSON, GitHub recommends using the [https://docs.github.com/en/graphql/guides/using-the-explorer](Explorer) to make GraphQL calls. You can also use cURL or any other HTTP-speaking library.
+
+### `Sample Request`
+
+```
+query($number_of_repos:Int!) {
+  viewer {
+    name
+     repositories(last: $number_of_repos) {
+       nodes {
+         name
+       }
+     }
+   }
+}
+variables {
+   "number_of_repos": 3
+}
+```
+
+## React
+The application is developed on React v17 along with Axios v0.21 for making API calls and Bootstrap v4.6 for styling.
+
+### `Axios`
+Axios is a promise-based HTTP client that is used to make API calls to the server.
+
+### `Bootstrap`
+Bootstrap is an open-source CSS framework that is used to create responsive, mobile-first application.
 
 ## Available Scripts
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-In the project directory, you can run:
 
 ### `npm start`
 
@@ -30,43 +80,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
